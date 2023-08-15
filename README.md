@@ -1,7 +1,7 @@
 <br />
 <p align="center">
-  <a href="logo/Logo.png">
-    <img src="logo/Logo.png" alt="Logo" width="80" height="80">
+  <a href="logo/Logo.jpg">
+    <img src="logo/Logo.jpg" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">BlueDolphin Platform Enhancer Extension</h3>
