@@ -26,9 +26,11 @@
             ],
             "run_at": "document_end",
             "css": [
-                "library/css/bd.css"
+                "library/css/bd.css",
+                "library/css/question.mark.css"
             ],
             "js": [
+                "library/inject/question.mark.js",
                 "library/bdapp/global.js",
                 "library/bdapp/bd.js",
                 "library/bdapp/clickComponents.js"
@@ -45,7 +47,7 @@
 
             ],
             "matches": [
-                "https://platform.boomi.com/*"
+                "https://bluedolphin.app/*"
             ]
         }
     ],

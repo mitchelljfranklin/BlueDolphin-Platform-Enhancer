@@ -40,6 +40,15 @@ $(document).ready(function () {
   });
 
 
+  //If Short Cut Button clicked then display shortcut keys
+  $(document).on("click", "#ext_shortCuts", function () {
+
+    var shorty = document.getElementById("helpUnderlay");
+    shorty.classList.add("help-isVisible");
+
+  
+
+});
 
 
 
