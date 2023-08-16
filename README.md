@@ -77,9 +77,10 @@ and install the addon; once done it will auto-enable when on the Boomi Web Platf
 
 The following provides the current abilities of the released extension for use within the Boomi Web Platform:
 
-* Copy View Current URL Button
-* Reload Web Interface Button
+* Button to Copy View Current URL Button
+* Button Reload Web Interface Button
 * Reminder - When creating a new BPM that it needs to be created in Objects first
+* Button or pressing Shift+? to bring up current BlueDolphin Key ShortCuts
 
 
 
