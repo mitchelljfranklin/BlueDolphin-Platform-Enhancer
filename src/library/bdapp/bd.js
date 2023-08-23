@@ -1,3 +1,12 @@
+
+//Main Window Loaded - Check to see if this is a new version of the extension and is so advise of whats changed
+document.arrive(".draftsnavbar__input", function (mainWindow) {
+ 
+  updatenotificationCheck(mainWindow)
+
+});
+
+
 //Add Custom Buttons to the NavBar for Actions
     //Main Nav
       //1: Copy Current URL Button
@@ -28,10 +37,6 @@ document.arrive(".draftsnavbar--sharedusers", function (viewnavBar) {
 });
 
 
-
-
-
-
 //Add in a reminder to the Busiess Process Modal Creation Modal that you need to create it in Objects First
 document.arrive(".create-new-bpmn", function (bpmModal) {
   var bpmTitle = document.getElementById("bpmReminder");
@@ -42,3 +47,16 @@ document.arrive(".create-new-bpmn", function (bpmModal) {
     );
   }
 });
+
+
+
+//Add buttons to the 3 dot context menu on the main bar
+document.arrive(".context-menu-button", function (contextMenu) {
+  //Copy Current URL
+  contextMenu.children[0].insertAdjacentHTML(
+    "beforeend",
+    '<li id="ext_contextcopy" class="tooltip__li tooltip__li--action">Copy Current View URL</li>'
+  );
+
+});
+
