@@ -88,16 +88,17 @@ function updateNotificationfun(mainWindow) {
 let htmlUpdateContents = `
 <ul>
 <li>
-<p><strong>Feature/Change:</strong> New update notification to advise of changes.</p>
+<p><strong>Feature/Change:</strong> New BPM 2.0 Implemented via Extension, It leverages the same library that BlueDolphin are looking to use to replace the existing BPM tooling, I just wanted to implement now.</p>
 </li>
 <li>
-<p><strong>Feature/Change:</strong> Addition of Copy Current View URL via the Context Menu Dropdown.</p>
+<p>As it is not linked with BlueDolphin objects no relationships can be mapped or leverage and store data within your BlueDolphin tenant, I recommend saving BPM files in central location for all team and use the SVG download to import into a BD View</p>
+<p>Note: No information is collected or submitted via the extension as such when using the BPM tooling it is completely isolated to your browser.</p>
 </li>
 </ul>
 `
 
 let updateHtml= `<div tabindex="0" id="ext_updateModal" class="create-view modal modal--show ember-view ext_updateModClose"><div class="modalbox ">
-<div id="ext124" class="__modalbox--title panel-header ember-view">  BlueDolphin Platform Extension Update Notification
+<div id="ext124" class="__modalbox--title panel-header ember-view">  Extension Update Notification
 
 
 <span class="modalbox--close fa fa-times" title="Close" id="ext_updateModClose"></span>
@@ -113,6 +114,10 @@ mainWindow.parentNode.insertAdjacentHTML(
   "beforeend",
   updateHtml
 );
+
+
+
+
 
 
 

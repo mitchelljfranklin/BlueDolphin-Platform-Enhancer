@@ -33,5 +33,16 @@ $(document).on("click", "#ext_updateModClose", function () {
 });
 
 
+//Remove the Update Modal if shown and the user Clicks the X
+$(document).on("click", "#ext_bpmn", function () {
+
+  let bpmn_url = chrome.runtime.getURL("library/new.html");
+
+  window.open(bpmn_url);
+
+
+});
+
+
 
 });

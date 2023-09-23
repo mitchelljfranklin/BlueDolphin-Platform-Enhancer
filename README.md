@@ -81,6 +81,7 @@ The following provides the current abilities of the released extension for use w
 * Button Reload Web Interface Button
 * Reminder - When creating a new BPM that it needs to be created in Objects first
 * Button or pressing Shift+? to bring up current BlueDolphin Key ShortCuts
+* BPM 2.0 Implemented via Extension as alternative to Out of the box BPM tooling until BlueDolphin update
 
 
 
