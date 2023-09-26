@@ -88,11 +88,7 @@ function updateNotificationfun(mainWindow) {
 let htmlUpdateContents = `
 <ul>
 <li>
-<p><strong>Feature/Change:</strong> New BPM 2.0 Implemented via Extension, It leverages the same library that BlueDolphin are looking to use to replace the existing BPM tooling, I just wanted to implement now.</p>
-</li>
-<li>
-<p>As it is not linked with BlueDolphin objects no relationships can be mapped or leverage and store data within your BlueDolphin tenant, I recommend saving BPM files in central location for all team and use the SVG download to import into a BD View</p>
-<p>Note: No information is collected or submitted via the extension as such when using the BPM tooling it is completely isolated to your browser.</p>
+<p><strong>BugFix:</strong> Resolved BPMN2.0 button styling not matching other main header buttons.</p>
 </li>
 </ul>
 `
