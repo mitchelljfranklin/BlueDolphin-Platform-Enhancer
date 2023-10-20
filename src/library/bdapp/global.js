@@ -1,6 +1,7 @@
 /*------Global------*/
 //Variables
 var sPageURL;
+var page;
 
 
 /*-------------Global Calling Functions--------------------*/
@@ -15,19 +16,19 @@ var getUrlpath = function getUrlpath() {
 
 
 
-//Function to get the page name without the extnesion, this will enable custom headers to be made later on
-function getPageNameWithoutExtension(){
-  return window.location.pathname.split('/').pop().split('.')[0];
-}
-
-function getGWTPageName(){
+//function to get the current BD URL without Views
+function getBDPath(){
   var urlString = $(location).attr('href');
-  var page = urlString.substring(
-    urlString.indexOf("#") + 1, 
-    urlString.indexOf(";")
-  );
+  
+  var temp1Path = urlString.split('drafts')
+
+  page = temp1Path[0]
   return page;
 }
+
+
+
+
 
 //Function to copy the current URL into the users clipboard and notify
 function dotheCopy(){
@@ -88,7 +89,7 @@ function updateNotificationfun(mainWindow) {
 let htmlUpdateContents = `
 <ul>
 <li>
-<p><strong>BugFix:</strong> Resolved BPMN2.0 button styling not matching other main header buttons.</p>
+<p><strong>Feature/Change:</strong> Add Your Own Custom Architecture View Templates to the Create Screen; You Simply Define your Templates into the defined JSON Array and provide it to the Extension via the Options Screen.</p>
 </li>
 </ul>
 `
@@ -111,10 +112,35 @@ mainWindow.parentNode.insertAdjacentHTML(
   updateHtml
 );
 
-
-
-
-
-
-
 }
+
+
+//Listen for Extension Option changes, if change notify the user that they will need to refresh the main screen for them to take affect
+chrome.storage.onChanged.addListener((changes, namespace) => {
+  for (let [key, { oldValue, newValue }] of Object.entries(changes)) {
+
+    let configUpdated= `<div tabindex="0" id="ext_updateModal" class="create-view modal modal--show ember-view ext_updateModClose"><div class="modalbox ">
+    <div id="ext124" class="__modalbox--title panel-header ember-view">  Extension Update Notification
+    
+    
+    <span class="modalbox--close fa fa-times" title="Close" id="ext_updateModClose"></span>
+    </div>
+    <div id="ext_updateNotification" class="__modalbox--content show-overflow ember-view">
+    <ul>
+<li>
+<p><strong>Extension Options Changed</strong> The enhancer extension options have changed, please refresh to enable the changes to take affect.</p>
+</li>
+</ul>
+    </div>
+    </div>
+    </div>`
+    
+    var updateWindow = document.getElementsByClassName("draftsnavbar__input")
+    
+    updateWindow[0].parentNode.insertAdjacentHTML(
+      "beforeend",
+      configUpdated
+    );
+
+  }
+});

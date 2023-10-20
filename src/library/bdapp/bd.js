@@ -79,3 +79,31 @@ document.arrive(".css-o3bizf", function (bdheader) {
 
 
 });
+
+
+
+
+
+
+//Add custom templates to screen
+document.arrive(".create-template-view", function (archtemplate) {
+      var data;
+      var html = '';
+
+      chrome.storage.local.get(["key"]).then((result) => {
+        //console.log("Value currently is " + result.key);
+
+        data = JSON.parse(result.key)
+
+        for (i = 0; i < data.length; ++i) {
+          let li = '<div class="col-sm-6 col-md-4"><div id="cusTemp" bdid="' + data[i].bdId + '" class="ember-view"><div class="thumbnail" title="' + data[i].templateName + '"><img src="' + data[i].base64Image + '" alt="' + data[i].templateName + '"><div class="caption"><h3 class="text-center">' + data[i].templateName + '</h3></div></div></div></div>'
+          html = html + li;
+        }
+
+        archtemplate.firstChild.children[1].children[1].insertAdjacentHTML(
+          "beforeend", html);
+
+      });
+
+
+});

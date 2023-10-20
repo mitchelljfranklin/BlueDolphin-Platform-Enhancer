@@ -82,6 +82,15 @@ The following provides the current abilities of the released extension for use w
 * Reminder - When creating a new BPM that it needs to be created in Objects first
 * Button or pressing Shift+? to bring up current BlueDolphin Key ShortCuts
 * BPM 2.0 Implemented via Extension as alternative to Out of the box BPM tooling until BlueDolphin update
+* Add Your Own Custom Architecture View Templates to the Create Screen; You Simply Define your Templates into the defined JSON Array and provide it to the Extension via the Options Screen. (As many as you want)
+  * ```json
+    [{
+        "templateName": "What do you want to call it",
+        "bdId": "ID That is Assigned to the View in the Web URL",
+        "base64Image":"And Encoded Base64 String to display the image of the View"
+    }]
+
+
 
 
 

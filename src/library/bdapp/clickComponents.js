@@ -45,4 +45,17 @@ $(document).on("click", "#ext_bpmn", function () {
 
 
 
+
+$(document).on("click", "#cusTemp", function () {
+
+
+getBDPath()
+window.location.href = page + 'drafts/' + $(this).attr("bdid")
+
+});
+
+
+
+
+
 });
