@@ -93,6 +93,7 @@ document.arrive(".create-template-view", function (archtemplate) {
       chrome.storage.local.get(["key"]).then((result) => {
         //console.log("Value currently is " + result.key);
 
+        if (result.key) {
         data = JSON.parse(result.key)
 
         for (i = 0; i < data.length; ++i) {
@@ -102,7 +103,7 @@ document.arrive(".create-template-view", function (archtemplate) {
 
         archtemplate.firstChild.children[1].children[1].insertAdjacentHTML(
           "beforeend", html);
-
+        }
       });
 
 

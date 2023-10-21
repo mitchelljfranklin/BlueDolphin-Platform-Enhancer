@@ -21,12 +21,25 @@ const restore_options = () => {
 
   
 
-    chrome.storage.local.get(["key"]).then((result) => {
-        console.log("Value currently is " + result.key);
+  chrome.storage.local.get(["key"]).then((result) => {
+    //console.log("Value currently is " + result.key);
+    var string = document.getElementById("optionTempjson");
+    if (result.key) {
 
-        var string = document.getElementById("optionTempjson");
-        string.value = result.key
-      });
+      string.value = result.key
+    } else {
+
+      var initialJson = `[
+          {
+            "templateName":"Template Name",
+            "bdId":"Template BD URL ID Number",      
+            "base64Image":"Base64 Encoded Image"    
+          }
+]`
+      string.value = initialJson
+
+    }
+  });
 
 
 
