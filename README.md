@@ -62,7 +62,7 @@ To get started simply visit one of the following Browser App Stores:
 * [Chrome Web Store](https://chrome.google.com/webstore/detail/bluedolphin-platform-enha/hdogaacdiofknhklffbmjcamndidnppa) 
 
 
-and install the addon; once done it will auto-enable when on the Boomi Web Platform.
+and install the addon; once done it will auto-enable when on the BlueDolphinPlatform.
 
 
 ### Installation
@@ -75,13 +75,12 @@ and install the addon; once done it will auto-enable when on the Boomi Web Platf
 
 ## Usage
 
-The following provides the current abilities of the released extension for use within the Boomi Web Platform:
+The following provides the current abilities of the released extension for use within the BlueDolphin Web Platform:
 
 * Button to Copy View Current URL Button (both in main navbar and in the Context Menu - the three dots)
 * Button Reload Web Interface Button
 * Reminder - When creating a new BPM that it needs to be created in Objects first
 * Button or pressing Shift+? to bring up current BlueDolphin Key ShortCuts
-* BPM 2.0 Implemented via Extension as alternative to Out of the box BPM tooling until BlueDolphin update
 * Add Your Own Custom Architecture View Templates to the Create Screen; You Simply Define your Templates into the defined JSON Array and provide it to the Extension via the Options Screen. (As many as you want)
   * ```json
     [{
