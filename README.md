@@ -4,7 +4,7 @@
     <img src="logo/Logo.jpg" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">BlueDolphin Platform Enhancer Extension</h3>
+  <h3 align="center">BlueDolphin Platform Enhancer Extension, ValueBlue prototype</h3>
 
   <p align="center">
     Provides User Enhancements to the Cloud BlueDolphin Platform
@@ -122,7 +122,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Name - [Mitchell Franklin](https://github.com/mitchelljfranklin) - mitchellfranklin@gmail.com
+Name - [Tom de Ridder](https://github.com/crAZiAc) - tom@valueblue.com
 
 
 
