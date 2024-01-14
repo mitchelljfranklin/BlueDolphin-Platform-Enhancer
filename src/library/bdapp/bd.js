@@ -61,7 +61,6 @@ document.arrive(".context-menu-button", function(contextMenu) {
 
 //Add custom templates to screen
 document.arrive(".create-template-view", function(archtemplate) {
-    var data;
     var html = '';
     getTenant();
 
@@ -77,10 +76,46 @@ document.arrive(".create-template-view", function(archtemplate) {
                         html = html + li;
                     }
 
-                    archtemplate.firstChild.children[1].children[1].insertAdjacentHTML(
+                    archtemplate.firstChild.children[1].children[2].insertAdjacentHTML(
                         "beforeend", html);
                 }
             }
         }
     });
+});
+
+// Check existing templates
+document.arrive(".thumbnail", function(archView) {
+    getTenant();
+    if (archView.title == "Blank") {
+        let templateList = archView.parentElement.parentElement.parentElement.children
+        for (i = 0; i < templateList.length; ++i) {
+            let templateNode = templateList[i];
+            if (templateNode.children.length > 0) {
+                if (templateNode.children[0].children.length > 0) {
+                    if (templateNode.children[0].children[0].children.length > 0) {
+                        let templateImage = templateNode.children[0].children[0].children[0]
+                        if (templateImage.src != null) {
+                            if (templateImage.src.includes("https://cdn.bluedolphin.app/data:image/png;base64,")) {
+                                let src = templateImage.src.replace("https://cdn.bluedolphin.app/", "");
+                                templateImage.src = src;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+});
+
+// Add screen to add new template
+document.arrive(".go-back-button", function(backButton) {
+    const tempButton = document.createElement("button");
+    tempButton.title = "Add new template";
+    tempButton.type = "button";
+    tempButton.id = "addnewtemplate";
+    tempButton.className = "btn btn-default";
+    const tempButtonText = document.createTextNode("Add new template");
+    tempButton.appendChild(tempButtonText);
+    backButton.insertAdjacentElement("afterend", tempButton);
 });

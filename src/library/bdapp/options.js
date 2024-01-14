@@ -35,7 +35,7 @@ const restore_options = () => {
                       "childViewBaseName": "Base name of the second child view to be created"
                     }
                   ],
-                  "base64Image": "Base64 Encoded Image"
+                  "base64Image": "data:image/png;base64,<Base64 Encoded Image>"
                 }]
               }]`
             string.value = initialJson

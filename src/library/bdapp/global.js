@@ -33,7 +33,6 @@ function getTenant() {
 
     var tempTenantPath = urlString.split('https://bluedolphin.app/');
     tenant = tempTenantPath[1].split("/")[0];
-    console.log(tenant);
     return tenant;
 }
 

@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "chrome",
+            "name": "https://bluedolphin.app/tomprdus/drafts/65a42030c653698507dceaf8",
+            "request": "launch",
+            "url": "https://bluedolphin.app/tomprdus/drafts/65a42030c653698507dceaf8"
+        }
+    ]
+}
