@@ -58,12 +58,11 @@ $(document).ready(function() {
                         let apiKey = entry.apiKey;
                         let environment = entry.environment;
                         let tenantName = entry.tenant;
-                        let bdId = $(this).attr("bdid");
+                        let masterView = $(this).attr("masterViewId");
                         for (i = 0; i < templates.length; ++i) {
-                            if (templates[i].bdId == bdId) {
+                            if (templates[i].masterViewId == masterView) {
                                 templateEntry = templates[i];
                                 var templateName = templateEntry.templateName;
-                                var masterView = templateEntry.masterViewId;
                                 var childViews = templateEntry.childViews;
                                 for (x = 0; x < childViews.length; ++x) {
                                     childViews[x].childViewName = childViews[x].childViewBaseName + " - " + currentdate;

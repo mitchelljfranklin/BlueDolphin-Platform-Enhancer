@@ -25,7 +25,7 @@ const restore_options = () => {
                 "environment": "Environment: prdeu00, prdeu01, prdus00",
                 "templates": [{
                   "templateName": "Name of the template",
-                  "bdId": "ID of the main view",
+                  "masterViewId": "ID of the main view",
                   "childViews": [{
                       "childViewOrgId": "ID of the first child view to be created",
                       "childViewBaseName": "Base name of the first child view to be created"

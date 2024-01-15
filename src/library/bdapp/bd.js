@@ -72,7 +72,7 @@ document.arrive(".create-template-view", function(archtemplate) {
                 if (entry.tenant == tenant) {
                     let templates = entry.templates;
                     for (i = 0; i < templates.length; ++i) {
-                        let li = '<div class="col-sm-6 col-md-4"><div id="cusTemp" bdid="' + templates[i].bdId + '" class="ember-view"><div class="thumbnail" title="' + templates[i].templateName + '"><img src="' + templates[i].base64Image + '" alt="' + templates[i].templateName + '"><div class="caption"><h3 class="text-center">' + templates[i].templateName + '</h3></div></div></div></div>'
+                        let li = '<div class="col-sm-6 col-md-4"><div id="cusTemp" masterViewId="' + templates[i].masterViewId + '" class="ember-view"><div class="thumbnail" title="' + templates[i].templateName + '"><img src="' + templates[i].base64Image + '" alt="' + templates[i].templateName + '"><div class="caption"><h3 class="text-center">' + templates[i].templateName + '</h3></div></div></div></div>'
                         html = html + li;
                     }
 
