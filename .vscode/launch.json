@@ -1,6 +1,27 @@
 {
     "configurations": [
         {
+            "name": "PowerShell Attach to Host Process",
+            "type": "PowerShell",
+            "request": "attach",
+            "runspaceId": 1
+        },
+        {
+            "name": "PowerShell Launch Script",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "enter path or command to execute e.g.: ${workspaceFolder}/src/foo.ps1 or Invoke-Pester",
+            "cwd": "${cwd}"
+        },
+        
+        {
+            "name": "PowerShell Launch Current File",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${file}",
+            "cwd": "${cwd}"
+        },
+        {
             "type": "chrome",
             "name": "https://bluedolphin.app/tomprdus/drafts/65a42030c653698507dceaf8",
             "request": "launch",

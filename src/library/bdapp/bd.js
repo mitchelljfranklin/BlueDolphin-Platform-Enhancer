@@ -63,7 +63,6 @@ document.arrive(".context-menu-button", function(contextMenu) {
 document.arrive(".create-template-view", function(archtemplate) {
     var html = '';
     getTenant();
-
     chrome.storage.local.get(["key"]).then((result) => {
         if (result.key) {
             let data = JSON.parse(result.key);
@@ -71,11 +70,10 @@ document.arrive(".create-template-view", function(archtemplate) {
                 let entry = data[i];
                 if (entry.tenant == tenant) {
                     let templates = entry.templates;
-                    for (i = 0; i < templates.length; ++i) {
-                        let li = '<div class="col-sm-6 col-md-4"><div id="cusTemp" masterViewId="' + templates[i].masterViewId + '" class="ember-view"><div class="thumbnail" title="' + templates[i].templateName + '"><img src="' + templates[i].base64Image + '" alt="' + templates[i].templateName + '"><div class="caption"><h3 class="text-center">' + templates[i].templateName + '</h3></div></div></div></div>'
+                    for (t = 0; t < templates.length; ++t) {
+                        let li = '<div class="col-sm-6 col-md-4"><div id="cusTemp" masterViewId="' + templates[t].masterViewId + '" class="ember-view"><div class="thumbnail" title="' + templates[t].templateName + '"><img src="' + templates[t].base64Image + '" alt="' + templates[t].templateName + '"><div class="caption"><h3 class="text-center">' + templates[t].templateName + '</h3></div></div></div></div>'
                         html = html + li;
                     }
-
                     archtemplate.firstChild.children[1].children[2].insertAdjacentHTML(
                         "beforeend", html);
                 }
