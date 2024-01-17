@@ -57,16 +57,18 @@ $(document).ready(function() {
                         let templates = entry.templates;
                         let apiKey = entry.apiKey;
                         let environment = entry.environment;
-                        let tenantName = entry.tenant;
                         let masterView = $(this).attr("masterViewId");
-                        for (i = 0; i < templates.length; ++i) {
-                            if (templates[i].masterViewId == masterView) {
-                                templateEntry = templates[i];
+                        console.log("Data: " + i);
+                        for (t = 0; t < templates.length; ++t) {
+                            console.log("Templates: " + t);
+                            if (templates[t].masterViewId == masterView) {
+                                templateEntry = templates[t];
                                 var templateName = templateEntry.templateName;
                                 var childViews = templateEntry.childViews;
                                 for (x = 0; x < childViews.length; ++x) {
                                     childViews[x].childViewName = childViews[x].childViewBaseName + " - " + currentdate;
                                 }
+                                console.log("Number of child views: " + x);
                                 fetch("https://bdmanagement.azurewebsites.net/api/views/" + environment + "/" + tenant, {
                                         method: "POST",
                                         body: JSON.stringify({
@@ -80,6 +82,7 @@ $(document).ready(function() {
                                         }
                                     })
                                     .then((response) => window.location.href = page + 'drafts/' + response.headers.get('Location'));
+
                             }
                         }
                     }
