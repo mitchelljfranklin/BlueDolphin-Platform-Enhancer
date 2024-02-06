@@ -58,31 +58,36 @@ $(document).ready(function() {
                         let apiKey = entry.apiKey;
                         let environment = entry.environment;
                         let masterView = $(this).attr("masterViewId");
-                        console.log("Data: " + i);
-                        for (t = 0; t < templates.length; ++t) {
-                            console.log("Templates: " + t);
-                            if (templates[t].masterViewId == masterView) {
-                                templateEntry = templates[t];
-                                var templateName = templateEntry.templateName;
-                                var childViews = templateEntry.childViews;
-                                for (x = 0; x < childViews.length; ++x) {
-                                    childViews[x].childViewName = childViews[x].childViewBaseName + " - " + currentdate;
-                                }
-                                console.log("Number of child views: " + x);
-                                fetch("https://bdmanagement.azurewebsites.net/api/views/" + environment + "/" + tenant, {
-                                        method: "POST",
-                                        body: JSON.stringify({
-                                            masterViewId: masterView,
-                                            mainViewName: templateName + " - " + currentdate,
-                                            childViews: childViews
-                                        }),
-                                        headers: {
-                                            "Content-type": "application/json; charset=UTF-8",
-                                            "X-API-Key": apiKey
-                                        }
-                                    })
-                                    .then((response) => window.location.href = page + 'drafts/' + response.headers.get('Location'));
+                        let baseName = prompt("Please enter the base name for the view");
+                        if (baseName != "" & baseName != null) {
+                            console.log("BaseName: " + baseName);
+                            console.log("Data: " + i);
+                            for (t = 0; t < templates.length; ++t) {
+                                console.log("Templates: " + t);
+                                if (templates[t].masterViewId == masterView) {
+                                    templateEntry = templates[t];
+                                    var mainViewBaseName = templateEntry.mainViewBaseName;
+                                    var childViews = templateEntry.childViews;
+                                    for (x = 0; x < childViews.length; ++x) {
+                                        childViews[x].childViewName = childViews[x].childViewBaseName;
+                                    }
+                                    console.log("Number of child views: " + x);
+                                    fetch("https://bdmanagement.azurewebsites.net/api/views/" + environment + "/" + tenant, {
+                                            method: "POST",
+                                            body: JSON.stringify({
+                                                masterViewId: masterView,
+                                                baseViewName: mainViewBaseName,
+                                                baseTemplateName: baseName,
+                                                childViews: childViews
+                                            }),
+                                            headers: {
+                                                "Content-type": "application/json; charset=UTF-8",
+                                                "X-API-Key": apiKey
+                                            }
+                                        })
+                                        .then((response) => window.location.href = page + 'drafts/' + response.headers.get('Location'));
 
+                                }
                             }
                         }
                     }
